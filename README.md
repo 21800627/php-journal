@@ -8,7 +8,7 @@
 ## How to Use
 1. Install Apache2, MySQL and PHP
 2. Fork the repository and create your branch
-3. Copy 'final_project/' to /var/www/html
+3. Copy and paste files under /var/www/html
 ## License
 MIT License
 ## Reference
