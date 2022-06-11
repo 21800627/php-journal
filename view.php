@@ -40,13 +40,25 @@ $row = $result->fetch_assoc();
         <h3 id="boardTitle"><b><?php echo $row['title']?></b></h3>
         <div id="boardInfo" class="text-muted small mb-4 mb-lg-0">
             <span id="boardID">작성자 : <?php echo $row["writer"]?></span>&nbsp;&nbsp;
-            <span id="boardDate">날짜 : <?php echo $row["date"]?></span>&nbsp;&nbsp;
+            <span id="boardDate">날짜 : 
+            <?php
+            $datetime = explode(' ', $row['date']);
+            $date = $datetime[0];
+            $time = $datetime[1];
+            if ($date == Date('yyyy-MM-dd')) {
+                $row['date'] = $time;
+            } else {
+                $row['date'] = $date;
+            }
+            echo $row["date"]
+            ?>
+            </span>&nbsp;&nbsp;
             <span id="boardHit">조회수 : <?php echo $row["hit"]?></span>&nbsp;&nbsp;
         </div><br>
         <div id="boardContent"><?php echo $row["content"]?></div>
     </div><br>
     <div class="btnSet">
-        <a href="./write.php?id=<?php echo $id?>">수정</a>
+        <a href="./write.php?id=<?php echo $id?>&date=<?php echo $row['date'] ?>">수정</a>
         <a href="./delete.php?id=<?php echo $id?>">삭제</a>
         <a href="./">목록</a>
     </div>

@@ -9,6 +9,11 @@
     <?php
     require_once("dbconfig.php");
 
+    if (isset($_GET["date"]))
+    {
+        $date = $_GET["date"];
+    }
+
     if (isset($_GET["id"]))
     {
         $id = $_GET["id"];
@@ -76,7 +81,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">제목</span>
                 </div>
-                <input type="title" class="form-control" placeholder="Title" name="title" id="title" aria-describedby="basic-addon1" value="<?php echo isset($row['title'])?$row['title']:null?>[<?php $dateString = date("Y-m-d", time()); echo $dateString; ?>]">
+                <input type="title" class="form-control" placeholder="Title" name="title" id="title" aria-describedby="basic-addon1"/>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">내용</label>
@@ -84,7 +89,7 @@
               </div>             
               <div class="btnSet">
                   <button type="submit" class="btnSubmit btn"><?php echo isset($id)?'수정':'작성'?></button>
-                  <a href="./list.php" class="btnList btn">뒤로가기</a>
+                  <a href="./list.php?date=<?php echo $row['date'] ?>" class="btnList btn">뒤로가기</a>
               </div>
         </form>
     </div>

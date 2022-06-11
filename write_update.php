@@ -53,7 +53,7 @@ if (empty($msg)) {
         ?>
         <script>
             alert("<?php echo $msg?>");
-            history.go(-1);
+            //history.go(-1);
         </script>
         <?php
         exit;
