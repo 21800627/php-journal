@@ -7,8 +7,19 @@
 2. For people who want to have positive view of the world and themselves.
 ## How to Use
 1. Install Apache2, MySQL and PHP
-2. Fork the repository and create your branch
-3. Copy and paste files under /var/www/html
+2. Start the Apache2 server
+3. Fork the repository and create your branch
+4. Copy and paste files under /var/www/html
+<code>sudo cp ./php-journal /var/www/html -r</code>
+## How to file a bug report
+### Issue
+1. Click <code>Issues</code> Tab
+2. Create a new issue
+3. You can use <code>labels</code> to categorize
+### Pull Request
+1. Fork the repository
+2. Create your working branch and commit changes
+3. Pull Request
 ## License
 MIT License
 ## Reference
